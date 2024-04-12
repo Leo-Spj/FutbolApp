@@ -3,6 +3,7 @@ package com.civa.futbolapp.service;
 import com.civa.futbolapp.persistence.entity.PosicionEntity;
 import com.civa.futbolapp.persistence.repository.PosicionRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class PosicionService {
 
     private final PosicionRepository posicionRepository;
 
+    @Autowired
     public PosicionService(PosicionRepository posicionRepository) {
         this.posicionRepository = posicionRepository;
     }
