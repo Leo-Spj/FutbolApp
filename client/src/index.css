@@ -5,7 +5,7 @@
     height: 100vh;
     max-width: 900px;
     margin: 50px auto;
-  }
+}
   
 .formularios{
     display: flex;
@@ -15,30 +15,36 @@
     gap: 20px;
 }
   
-  .tableFutbolistas{
+.tableFutbolistas{
     margin-top: 30px;
     min-height: 280px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  
-  .formFutbolista{
+}
+
+.formFutbolista{
     display: flex;
     flex-direction: column;
     min-width: 300px;
     gap: 6px;
-  }
-  
-  .formPosicion{
+}
+
+.formPosicion{
     display: flex;
     flex-direction: column;
     gap: 6px;
-  }
-  
-  @media (max-width: 600px) {
+}
+
+.githubLink{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+@media (max-width: 720px) {
     .formularios {
-      flex-direction: column;
+        flex-direction: column;
     }
-  }
+}
