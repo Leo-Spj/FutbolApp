@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    max-width: 900px;
+    margin: 50px auto;
+  }
+  
+.formularios{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 30px;
+    gap: 20px;
+}
+  
+  .tableFutbolistas{
+    margin-top: 30px;
+    min-height: 280px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .formFutbolista{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    gap: 6px;
+  }
+  
+  .formPosicion{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  @media (max-width: 600px) {
+    .formularios {
+      flex-direction: column;
+    }
+  }
