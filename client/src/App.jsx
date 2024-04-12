@@ -1,7 +1,7 @@
 
-import FormFutbolista from './assets/components/FormFutbolista';
-import FormPosiciones from './assets/components/FormPosiciones';
-import TablaFutbolista from './assets/components/TablaFutbolistas'
+import FormFutbolista from './components/FormFutbolista';
+import FormPosiciones from './components/FormPosiciones';
+import TablaFutbolista from './components/TablaFutbolistas'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         </div>
         <TablaFutbolista />
       </div>
+      <a className='githubLink' href="https://github.com/Leo-Spj/FutbolApp">Repo GitHub</a>
     </>
   );
 }
