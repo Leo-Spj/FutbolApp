@@ -14,8 +14,9 @@ public class PosicionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "posicionid")
+    @Column(name = "posicion_id")
     private int id;
 
+    @Column(unique = true, nullable = false, length = 50)
     private String posicion;
 }
