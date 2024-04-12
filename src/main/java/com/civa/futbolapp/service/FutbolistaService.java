@@ -2,6 +2,7 @@ package com.civa.futbolapp.service;
 
 import com.civa.futbolapp.persistence.entity.FutbolistaEntity;
 import com.civa.futbolapp.persistence.repository.FutbolistaPaginSortRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +13,7 @@ public class FutbolistaService{
 
     private final FutbolistaPaginSortRepository futbolistaRepository;
 
+    @Autowired
     public FutbolistaService(FutbolistaPaginSortRepository futbolistaRepository) {
         this.futbolistaRepository = futbolistaRepository;
     }
