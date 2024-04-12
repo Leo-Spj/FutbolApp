@@ -12,35 +12,35 @@ import java.util.List;
 @RequestMapping("/posicion")
 public class PosicionController {
 
-    private final PosicionService service;
+    private final PosicionService posicionService;
 
     @Autowired
     public PosicionController(PosicionService service) {
-        this.service = service;
+        this.posicionService = service;
     }
 
     @GetMapping
     public ResponseEntity<List<PosicionEntity>> getAll(){
-        return ResponseEntity.ok(service.getAll());
+        return ResponseEntity.ok(posicionService.getAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PosicionEntity> getById(Integer id){
-        return ResponseEntity.ok(service.getByID(id));
+    public ResponseEntity<PosicionEntity> getById(@PathVariable Integer id){
+        return ResponseEntity.ok(posicionService.getByID(id));
     }
 
     @PostMapping
-    public ResponseEntity<PosicionEntity> save(PosicionEntity posicion){
-        return ResponseEntity.ok(service.save(posicion));
+    public ResponseEntity<PosicionEntity> save(@RequestBody PosicionEntity posicion){
+        return ResponseEntity.ok(posicionService.save(posicion));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PosicionEntity> update(Integer id, PosicionEntity posicion){
-        return ResponseEntity.ok(service.update(id, posicion));
+    public ResponseEntity<PosicionEntity> update(@PathVariable Integer id, @RequestBody PosicionEntity posicion){
+        return ResponseEntity.ok(posicionService.update(id, posicion));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<PosicionEntity> delete(Integer id){
-        return ResponseEntity.ok(service.delete(id));
+    public ResponseEntity<PosicionEntity> delete(@PathVariable Integer id){
+        return ResponseEntity.ok(posicionService.delete(id));
     }
 }
