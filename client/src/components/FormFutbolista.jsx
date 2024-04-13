@@ -9,6 +9,7 @@ function FormFutbolista() {
     const [caracteristicas, setCaracteristicas] = useState('');
     const [posicion, setPosicion] = useState('');
     const [posiciones, setPosiciones] = useState([]);
+    const [notify, setNotify] = useState({});
 
     useEffect(() => {
         axios.get('http://localhost:8080/posicion')
@@ -36,12 +37,37 @@ function FormFutbolista() {
 
         axios.post('http://localhost:8080/futbolista', futbolista)
             .then(res => {
-                console.log(res.data);
+                
+                axios.get(`http://localhost:8080/futbolista/${res.data.id}`)
+                    .then(response => {
+                        console.log("Futbolista creado:", response.data);
+                        setNotify({ message: 'Futbolista creado', futbolista: response.data});
+                    })
+                    .catch(error => {
+                        console.error('error', error);
+                    });
+
             })
             .catch(error => {
                 console.error('error', error);
             });
     };
+
+    useEffect(() => {
+        if (notify.message) {
+            alert(notify.message + 
+                '\nNombre: ' + notify.futbolista.nombre +
+                '\nApellido: ' + notify.futbolista.apellido +
+                '\nFecha de Nacimiento: ' + notify.futbolista.fechaNacimiento +
+                '\nCaracterísticas: ' + notify.futbolista.caracteristicas +
+                '\nPosición: ' + notify.futbolista.posicion.posicion);
+            setNombre('');
+            setApellido('');
+            setFechaNacimiento('');
+            setCaracteristicas('');
+            setPosicion('');
+        }
+    }, [notify]);
 
     return (
         <form onSubmit={handleSubmit} className='formFutbolista'>
