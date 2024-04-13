@@ -55,7 +55,7 @@ function FormFutbolista() {
 
     useEffect(() => {
         if (notify.message) {
-            alert(notify.message + 
+            alert(notify.message + ":\n" +
                 '\nNombre: ' + notify.futbolista.nombre +
                 '\nApellido: ' + notify.futbolista.apellido +
                 '\nFecha de Nacimiento: ' + notify.futbolista.fechaNacimiento +
