@@ -27,7 +27,7 @@ function FormPosiciones() {
                 value={posicion}
                 onChange={handleChange}
             />
-            <Button type="submit"  variant="contained" color="primary" >
+            <Button type="submit"  variant="contained" color="primary" onClick={() => window.location.reload()}>
                 Crear Posición
             </Button>
         </form>

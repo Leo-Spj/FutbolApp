@@ -83,7 +83,7 @@ function FormFutbolista() {
                     ))}
                 </Select>
             </FormControl> 
-            <Button type="submit"  variant="contained" color="primary" >Enviar</Button>
+            <Button type="submit"  variant="contained" color="primary" onClick={() => window.location.reload()}>Enviar</Button>
         </form>
     );
 }
