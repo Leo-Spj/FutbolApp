@@ -42,6 +42,7 @@ function FormFutbolista() {
                     .then(response => {
                         console.log("Futbolista creado:", response.data);
                         setNotify({ message: 'Futbolista creado', futbolista: response.data});
+                        window.location.reload()
                     })
                     .catch(error => {
                         console.error('error', error);
@@ -83,7 +84,7 @@ function FormFutbolista() {
                     ))}
                 </Select>
             </FormControl> 
-            <Button type="submit"  variant="contained" color="primary" onClick={() => window.location.reload()}>Enviar</Button>
+            <Button type="submit"  variant="contained" color="primary">Enviar</Button>
         </form>
     );
 }
